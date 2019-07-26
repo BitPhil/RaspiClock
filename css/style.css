@@ -13,22 +13,37 @@ html, body{
     height: 100%;
     margin: 0;
     padding:0;
-    background: rgb(0, 0, 0);
+    background: black;
     color: white;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2.5% 19% 19% 19% 19% 19% 2.5%;
+    grid-template-rows: 2.5% 19% 19% 19% 19% 19% 2.5%;
     grid-template-areas: 
-        "datetime datetime weather weather weather"
-        "datetime datetime weather weather weather"
-        "alarms alarms weather weather weather"
-        "alarms alarms weather weather weather"
-        "alarms alarms . buttons buttons"
+        ". . . . . . ."
+        ". datetime datetime weather weather weather ."
+        ". datetime datetime weather weather weather ."
+        ". alarms alarms weather weather weather ."
+        ". alarms alarms weather weather weather ."
+        ". buttons buttons buttons buttons buttons ."
+        ". . . . . . ."
 }
 
 .datetime{
     grid-area: datetime;
-    justify-self: stretch;
-    align-self: stretch;
+    justify-self: left;
+    align-self: top;
+}
+
+.alarms{
+    grid-area: alarms;
+    font-size: 14px;
+    align-self: top;
+}
+
+.alarm{
+    display:grid;
+    grid-template-columns: 50% 20%;
+    font-size: 12px;
+    color: grey;
 }
 
 .weather{
