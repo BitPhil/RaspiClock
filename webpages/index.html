@@ -59,7 +59,7 @@
             </script>
         </div>
 
-        <div class="alarms grid-box">
+        <div class="alarms grid-box" id="alarms">
             Weckzeiten:
             <div class="alarm">
                 <div id="alarmtime_1">06:00</div>
@@ -77,6 +77,14 @@
                 <div id="alarmtime_4">Alarm4</div>
                 <div id="status_4">activated</div>
             </div>
+            <a href="alarms.html"></a>
+            <script>
+                // Open link in same window (similar to target=_blank)
+                $('#alarms').click(function(){
+                    window.location = $(this).find("a:first").attr("href");
+                    return false;
+                });
+            </script>
         </div>
         
         <div class="weather grid-box">
@@ -85,18 +93,46 @@
             </div>
         </div>
 
-        <div class="home grid-box">
+        
+        <div class="home grid-box" id="home">
             <i class="fas fa-home fa-4x"></i>
+            <a href="index.html"></a>
+            <script>
+                // Open link in same window (similar to target=_blank)
+                $('#home').click(function(){
+                    window.location = $(this).find("a:first").attr("href");
+                    return false;
+                });
+            </script>
         </div>
+       
 
-        <div class="light grid-box">
+        <div class="light grid-box" id="light">
             <i class="far fa-lightbulb fa-4x"></i>
+            <a href="light.html"></a>
+            <script>
+                // Open link in same window (similar to target=_blank)
+                $('#light').click(function(){
+                    window.location = $(this).find("a:first").attr("href");
+                    return false;
+                });
+            </script>
         </div>
-
-        <div class="settings grid-box">
+        
+        <div class="settings grid-box" id="settings">
             <i class="fas fa-cogs fa-4x"></i>
+            <a href="settings.html"></a>
+            <script>
+                // Open link in same window (similar to target=_blank)
+                $('#settings').click(function(){
+                    window.location = $(this).find("a:first").attr("href");
+                    return false;
+                });
+            </script>
         </div>
 
+         
+      
     </main>
 
     </body>

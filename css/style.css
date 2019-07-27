@@ -37,6 +37,7 @@ html, body{
     grid-area: alarms;
     font-size: 14px;
     align-self: top;
+    cursor: pointer;
 }
 
 .alarm{
@@ -56,16 +57,19 @@ html, body{
     grid-area: buttons;
     justify-self: left;
     align-self: center;
+    cursor: pointer;
 }
 
 .light{
     grid-area: buttons;
     justify-self: center;
     align-self: center;
+    cursor: pointer;
 }
 
 .settings{
     grid-area: buttons;
     justify-self: right;
     align-self: center;
+    cursor: pointer;
 }
