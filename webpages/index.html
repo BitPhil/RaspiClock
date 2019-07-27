@@ -7,13 +7,17 @@
         <meta name="author" content="Philipp Soehring">
         <link rel="stylesheet" href="../css/style.css">
         <script src="https://kit.fontawesome.com/a629caa499.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" 
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous">
+        </script>
     </head>
 
     <body>
 
     <main class="wrapper">
 
-        <div class="datetime grid-box">
+        <div class="datetime grid-box" id="datetime">
             <!-- clock widget start -->
             <script type="text/javascript"> 
                 var css_file=document.createElement("link");
@@ -43,6 +47,16 @@
             </script>
             <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/time/info?ver=2&domid=&type=8&id=1659676024&scode=124&city_id=18056&wlangid=2&mode=1&details=0&background=rgba(0,0,0,0.6)&color=ffffff&add_background=ffffff&add_color=ffffff&head_color=ffffff&border=0&transparent=1"></script>
             <!-- clock widget end -->
+            <script type="text/javascript">
+                $(document).ready();
+                
+                function refresh(){
+                    setTimeout( function() {
+                        setWidgetData_1659676024(data);
+                        refresh();
+                    }, 100);
+                }
+            </script>
         </div>
 
         <div class="alarms grid-box">
