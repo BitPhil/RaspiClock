@@ -1,139 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <meta name="description" content="clocks webbased GUI">
-        <meta name="author" content="Philipp Soehring">
-        <link rel="stylesheet" href="../css/index.css">
-        <script src="https://kit.fontawesome.com/a629caa499.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.js" 
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous">
-        </script>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="clocks webbased GUI" />
+    <meta name="author" content="Philipp Soehring & Co." />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="http://s.bookcdn.com//css/cl/bw-cl-150x100t.css" />
+  </head>
 
-    <body>
-
+  <body>
     <main class="wrapper">
+      <div class="datetime grid-box" id="datetime">
+        <div id="tw_8_1659676024">
+          <div style="width:150px; height:100px; margin: 0 auto;">
+            <a href="https://hotel-mix.de/time/berlin-18056">Berlin</a>
+            <br />
+          </div>
+        </div>
+        <!-- clock widget end -->
+      </div>
 
-        <div class="datetime grid-box" id="datetime">
-            <!-- clock widget start -->
-            <script type="text/javascript"> 
-                var css_file=document.createElement("link");
-                css_file.setAttribute("rel","stylesheet");
-                css_file.setAttribute("type","text/css");
-                css_file.setAttribute("href","//s.bookcdn.com//css/cl/bw-cl-150x100t.css");
-                document.getElementsByTagName("head")[0].appendChild(css_file);
-            </script>
-            <div id="tw_8_1659676024">
-                <div style="width:150px; height:100px; margin: 0 auto;">
-                    <a href="https://hotel-mix.de/time/berlin-18056">Berlin</a>
-                    <br/>
-                </div>
-            </div>
-            <script type="text/javascript">
-                function setWidgetData_1659676024(data){ 
-                    if(typeof(data) != 'undefined' && data.results.length > 0) {
-                        for(var i = 0; i < data.results.length; ++i) { 
-                            var objMainBlock = '';
-                            var params = data.results[i];
-                            objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id);
-                            if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code;
-                        } 
-                    }
-                }
-                var clock_timer_1659676024 = -1;
-            </script>
-            <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/time/info?ver=2&domid=&type=8&id=1659676024&scode=124&city_id=18056&wlangid=2&mode=1&details=0&background=rgba(0,0,0,0.6)&color=ffffff&add_background=ffffff&add_color=ffffff&head_color=ffffff&border=0&transparent=1"></script>
-            <!-- clock widget end -->
-            <script type="text/javascript">
-                $(document).ready();
-                
-                function refresh(){
-                    setTimeout( function() {
-                        setWidgetData_1659676024(data);
-                        refresh();
-                    }, 10);
-                }
-            </script>
+      <div class="alarms grid-box" id="alarms">
+        Weckzeiten:
+        <div class="alarm">
+          <div id="alarmtime_1">06:00</div>
+          <div id="status_1">aktiv</div>
         </div>
+        <div class="alarm">
+          <div id="alarmtime_2">05:00</div>
+          <div id="status_2">inaktiv</div>
+        </div>
+        <div class="alarm">
+          <div id="alarmtime_3">Alarm3</div>
+          <div id="status_3">activated</div>
+        </div>
+        <div class="alarm">
+          <div id="alarmtime_4">Alarm4</div>
+          <div id="status_4">activated</div>
+        </div>
+        <a href="alarms.html"></a>
+        <script></script>
+      </div>
 
-        <div class="alarms grid-box" id="alarms">
-            Weckzeiten:
-            <div class="alarm">
-                <div id="alarmtime_1">06:00</div>
-                <div id="status_1">aktiv</div>
-            </div>
-            <div class="alarm">
-                <div id="alarmtime_2">05:00</div>
-                <div id="status_2">inaktiv</div>
-            </div>
-            <div class="alarm">
-                <div id="alarmtime_3">Alarm3</div>
-                <div id="status_3">activated</div>
-            </div>
-            <div class="alarm">
-                <div id="alarmtime_4">Alarm4</div>
-                <div id="status_4">activated</div>
-            </div>
-            <a href="alarms.html"></a>
-            <script>
-                // Open link in same window (similar to target=_blank)
-                $('#alarms').click(function(){
-                    window.location = $(this).find("a:first").attr("href");
-                    return false;
-                });
-            </script>
-        </div>
-        
-        <div class="weather grid-box">
-            <div id="cont_e033dd6fad3d734c5f71ea2cccee808e">
-                <script type="text/javascript" async src="https://www.daswetter.com/wid_loader/e033dd6fad3d734c5f71ea2cccee808e"></script>
-            </div>
-        </div>
+      <div class="weather grid-box">
+        <div id="cont_e033dd6fad3d734c5f71ea2cccee808e"></div>
+      </div>
 
-        
-        <div class="home grid-box" id="home">
-            <i class="fas fa-home fa-4x"></i>
-            <a href="index.html"></a>
-            <script>
-                // Open link in same window (similar to target=_blank)
-                $('#home').click(function(){
-                    window.location = $(this).find("a:first").attr("href");
-                    return false;
-                });
-            </script>
-        </div>
-       
+      <div class="home grid-box" id="home">
+        <i class="fas fa-home fa-4x"></i>
+        <a href="index.html"></a>
+      </div>
 
-        <div class="light grid-box" id="light">
-            <i class="far fa-lightbulb fa-4x"></i>
-            <a href="light.html"></a>
-            <script>
-                // Open link in same window (similar to target=_blank)
-                $('#light').click(function(){
-                    window.location = $(this).find("a:first").attr("href");
-                    return false;
-                });
-            </script>
-        </div>
-        
-        <div class="settings grid-box" id="settings">
-            <i class="fas fa-cogs fa-4x"></i>
-            <a href="settings.html"></a>
-            <script>
-                // Open link in same window (similar to target=_blank)
-                $('#settings').click(function(){
-                    window.location = $(this).find("a:first").attr("href");
-                    return false;
-                });
-            </script>
-        </div>
+      <div class="light grid-box" id="light">
+        <a href="light.html">
+          <i class="far fa-lightbulb fa-4x"></i>
+        </a>
+      </div>
 
-         
-      
+      <div class="settings grid-box" id="settings">
+        <a href="settings.html">
+          <i class="fas fa-cogs fa-4x"></i>
+        </a>
+      </div>
     </main>
-
-    </body>
+    <!-- Scripts at the bottom to load DOM first -->
+    <script src="https://kit.fontawesome.com/a629caa499.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <script src="../js/index.js"></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://widgets.booked.net/time/info?ver=2&domid=&type=8&id=1659676024&scode=124&city_id=18056&wlangid=2&mode=1&details=0&background=rgba(0,0,0,0.6)&color=ffffff&add_background=ffffff&add_color=ffffff&head_color=ffffff&border=0&transparent=1"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="https://www.daswetter.com/wid_loader/e033dd6fad3d734c5f71ea2cccee808e"
+    ></script>
+  </body>
 </html>
