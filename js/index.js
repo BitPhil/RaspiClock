@@ -12,15 +12,9 @@ function setWidgetData_1659676024(data){
     console.log(data);
 }
 let clock_timer_1659676024 = -1;
-
-//$(document).ready();
                 
 function refresh(){
-    // Alternative for recursion -> setInterval
-    setTimeout( function() {
-        setWidgetData_1659676024(data);
-        refresh();
-    }, 10);
+    setInterval(() => {setWidgetData_1659676024(data)}, 10)
 }
 
 //#endregion
