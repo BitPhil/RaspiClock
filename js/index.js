@@ -17,4 +17,15 @@ function refresh(){
     setInterval(() => {setWidgetData_1659676024(data)}, 10)
 }
 
+
+//#region light
+// when light-button is clicked, the connected light should be turned on/off
+// actual status is shown bei button color
+getElementbyid(light).addEventListener("click", lightOnOff)
+function lightOnOff(){
+    alert("light switched:" + toString(status))
+}
+
+
+
 //#endregion
