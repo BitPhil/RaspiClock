@@ -16,11 +16,23 @@ let clock_timer_1659676024 = -1;
 function refresh(){
     setInterval(() => {setWidgetData_1659676024(data)}, 10);
 }
+//#endregion
 
 //#region light
 // when light-button is clicked, the connected light should be turned on/off
 // actual status is shown bei button color
+
 Light_on = false;
+
+function set_light_btn(){
+    if(Light_on == true){
+        document.getElementById('btn_color').style.color = 'orange';
+    }
+    else{
+        document.getElementById('btn_color').style.color = 'black';
+    }
+}
+
 document.getElementById("light_btn").onclick = switch_light;
 
 function switch_light(){
