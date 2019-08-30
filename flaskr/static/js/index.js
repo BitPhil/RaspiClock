@@ -14,15 +14,22 @@ function setWidgetData_1659676024(data){
 let clock_timer_1659676024 = -1;
                 
 function refresh(){
-    setInterval(() => {setWidgetData_1659676024(data)}, 10)
+    setInterval(() => {setWidgetData_1659676024(data)}, 10);
 }
 
 //#region light
 // when light-button is clicked, the connected light should be turned on/off
 // actual status is shown bei button color
-getElementbyid(light).addEventListener("click", lightOnOff)
+document.getElementbyid("light").addEventListener("click", lightOnOff);
+Light_on = false;
 function lightOnOff(){
-    alert("light switched:" + toString(status))
+    if(Light_on == false){
+        Light_on = true;
+    }
+    else{
+        Light_on = false;
+    }
+    alert("light switched:" + Light_on);
 }
 
 
