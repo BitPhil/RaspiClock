@@ -27,7 +27,7 @@ a {
         ". datetime datetime weather weather weather ."
         ". alarms alarms weather weather weather ."
         ". alarms alarms weather weather weather ."
-        ". buttons buttons buttons buttons buttons ."
+        ". homebtn . light_offbtn light_onbtn settingsbtn ."
         ". . . . . . ."
 }
 
@@ -58,21 +58,28 @@ a {
 }
 
 .home{
-    grid-area: buttons;
-    justify-self: left;
-    align-self: center;
-    cursor: pointer;
-}
-
-.light{
-    grid-area: buttons;
+    grid-area: homebtn;
     justify-self: center;
     align-self: center;
     cursor: pointer;
 }
 
+.light_on{
+    grid-area: light_onbtn;
+    justify-self: left;
+    align-self: center;
+    cursor: pointer;
+}
+
+.light_off{
+    grid-area: light_offbtn;
+    justify-self: right;
+    align-self: center;
+    cursor: pointer;
+}
+
 .settings{
-    grid-area: buttons;
+    grid-area: settingsbtn;
     justify-self: right;
     align-self: center;
     cursor: pointer;

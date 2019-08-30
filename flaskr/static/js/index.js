@@ -33,7 +33,7 @@ function set_light_btn(){
     }
 }
 
-document.getElementById("light_btn").onclick = switch_light;
+//document.getElementById("light_btn").onclick = switch_light;
 
 function switch_light(){
     if(Light_on == false){

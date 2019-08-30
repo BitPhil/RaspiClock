@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="http://s.bookcdn.com//css/cl/bw-cl-150x100t.css" />
   </head>
 
-  <body onload="set_light_btn()">
+  <body>
     <main class="wrapper">
       <div class="datetime grid-box" id="datetime">
         <div id="tw_8_1659676024">
@@ -57,9 +57,17 @@
         </button>
       </div>
 
-      <div class="light grid-box" id="light_btn">
+      <div class="light_off grid-box" id="light_off">
         <button style="width: 80px; height: 65px;">
           <span style="font-size: 4em; color: black;">
+            <i class="far fa-lightbulb fa" id="btn_color"></i>
+          </span>
+        </button>
+      </div>
+
+      <div class="light_on grid-box" id="light_on">
+        <button style="width: 80px; height: 65px;">
+          <span style="font-size: 4em; color: orange;">
             <i class="far fa-lightbulb fa" id="btn_color"></i>
           </span>
         </button>
