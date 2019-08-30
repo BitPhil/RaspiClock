@@ -20,18 +20,17 @@ function refresh(){
 //#region light
 // when light-button is clicked, the connected light should be turned on/off
 // actual status is shown bei button color
-document.getElementbyid("light").addEventListener("click", lightOnOff);
 Light_on = false;
-function lightOnOff(){
+document.getElementById("light_btn").onclick = switch_light;
+
+function switch_light(){
     if(Light_on == false){
         Light_on = true;
+        document.getElementById('btn_color').style.color = 'orange';
     }
     else{
         Light_on = false;
+        document.getElementById('btn_color').style.color = 'black';
     }
-    alert("light switched:" + Light_on);
 }
-
-
-
 //#endregion
