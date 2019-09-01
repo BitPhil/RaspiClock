@@ -19,8 +19,8 @@ def alarms():
 def settings():
     return render_template('settings.html')
 
-@app.route('/light')
-def light():
+@app.route('/_light', methods=['POST'])
+def lightOn():
     if(request.method == 'POST'):
         status_on = request.form['status_on']
 
@@ -30,15 +30,19 @@ def light():
         # Setting up the command/data based on content of status_on (true or false)
         if(status_on == True):
             data = {"on":True, "bri":200} #bri = 254 is full brightness
+            response = {'turned on'}
         else:
             data = {"on":False}
+            response = {'turned off'}
 
         # Send the command to the bulb via hue bridge
         r = requests.put(url, json.dumps(data), timeout=5)
-    
-        #after that go back to the home page
-        return redirect(url_for('index'), code=302)
 
+
+        return response
+
+        #after that go back to the home page
+        #return redirect(url_for('index'), code=302)    
 
 if __name__ == '__main__':
     app.run(debug=True, port=80, host='192.168.178.31')

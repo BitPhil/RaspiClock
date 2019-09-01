@@ -22,6 +22,26 @@ function refresh(){
 // when light-button is clicked, the connected light should be turned on/off
 // actual status is shown bei button color
 
+$(document).ready(function(){  
+    $("#light_on").click(function(){
+        alert("Clicked");
+        $.ajax({
+            url: '/_light',
+            data: {'status_on':'True'},
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+                alert("success");
+            },
+            error: function(error) {
+                console.log(error);
+                alert("error");
+            }
+        });
+    });
+});
+
+/*
 Light_on = false;
 
 function set_light_btn(){
@@ -46,3 +66,5 @@ function switch_light(){
     }
 }
 //#endregion
+
+*/
