@@ -25,6 +25,9 @@ function refresh(){
 $(document).ready(function(){  
     $("#light_on").click(function(){
         alert("Clicked");
+        // prüfen, ob Licht an oder aus ist (Hue-Abfrage, Datenbank, CSV, ...)
+        
+        // data im folgenden ajax dementsprechend True (wenn Licht aus ist) oder False (wenn Licht an ist) setzen
         $.ajax({
             url: '/_light',
             data: {'status_on':'True'},
@@ -43,17 +46,6 @@ $(document).ready(function(){
 
 /*
 Light_on = false;
-
-function set_light_btn(){
-    if(Light_on == true){
-        document.getElementById('btn_color').style.color = 'orange';
-    }
-    else{
-        document.getElementById('btn_color').style.color = 'black';
-    }
-}
-
-//document.getElementById("light_btn").onclick = switch_light;
 
 function switch_light(){
     if(Light_on == false){
