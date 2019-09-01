@@ -35,28 +35,13 @@ $(document).ready(function(){
             success: function(response) {
                 console.log(response);
                 alert("success");
+                $("#btn_color").style.color = 'orange';
             },
             error: function(error) {
                 console.log(error);
                 alert("error");
+                $("#btn_color").style.color = 'black';
             }
         });
     });
 });
-
-/*
-Light_on = false;
-
-function switch_light(){
-    if(Light_on == false){
-        Light_on = true;
-        document.getElementById('btn_color').style.color = 'orange';
-    }
-    else{
-        Light_on = false;
-        document.getElementById('btn_color').style.color = 'black';
-    }
-}
-//#endregion
-
-*/
