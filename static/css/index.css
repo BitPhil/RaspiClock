@@ -1,0 +1,135 @@
+html, body{
+    width: 480px;
+    height: 320px;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+a {
+    color: #FFFFFF;
+}
+
+.wrapper{
+    display:grid;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding:0;
+    background: black;
+    color: white;
+    grid-template-columns: 2.5% 19% 19% 19% 19% 19% 2.5%;
+    grid-template-rows: 2.5% 19% 19% 19% 19% 19% 2.5%;
+    grid-template-areas: 
+        ". . . . . . ."
+        ". datetime datetime weather weather weather ."
+        ". datetime datetime weather weather weather ."
+        ". alarms alarms weather weather weather ."
+        ". alarms alarms weather weather weather ."
+        ". homebtn . light_offbtn light_onbtn settingsbtn ."
+        ". . . . . . ."
+}
+
+.datetime{
+    grid-area: datetime;
+    justify-self: left;
+    align-self: top;
+}
+
+.alarms{
+    grid-area: alarms;
+    font-size: 14px;
+    align-self: top;
+    cursor: pointer;
+}
+
+.alarm{
+    display:grid;
+    grid-template-columns: 50% 20%;
+    font-size: 12px;
+    color: grey;
+}
+
+.weather{
+    grid-area: weather;
+    justify-self: right;
+    align-self: top;
+}
+
+.home{
+    grid-area: homebtn;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.light_on{
+    grid-area: light_onbtn;
+    justify-self: left;
+    align-self: center;
+    cursor: pointer;
+}
+
+.light_off{
+    grid-area: light_offbtn;
+    justify-self: right;
+    align-self: center;
+    cursor: pointer;
+}
+
+.settings{
+    grid-area: settingsbtn;
+    justify-self: right;
+    align-self: center;
+    cursor: pointer;
+}
+
+/* If you want you can use font-face */
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('BebasNeue-webfont.eot');
+    src: url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BebasNeue-webfont.woff') format('woff'),
+         url('BebasNeue-webfont.ttf') format('truetype'),
+         url('BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.clock {
+    width: 180px;
+    margin: 0 auto;
+    padding: 1px;
+    border: 1px solid #333;
+    color: black;
+}
+
+#Date {
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 0 0 2px #00c6ff;
+}
+
+ul {
+    width: 180px;
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+ul li {
+    display: inline;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 2px #00c6ff;
+}
+
+#point {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}
