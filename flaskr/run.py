@@ -23,7 +23,7 @@ def settings():
 def lightOn():
     status_on = request.form['status_on']
     flash("status_on:", status_on)
-
+    
     # Setting up URL to send commands to the bulb via the hue bridge
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
 
