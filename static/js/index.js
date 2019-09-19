@@ -1,16 +1,18 @@
 $(document).ready(function(){
     
     // Create two variable with the names of the months and days in an array
-    var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
-    var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]; 
+    var dayNames= ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     
     // Create a newDate() object
     var newDate = new Date();
     // Extract the current date from Date object
     newDate.setDate(newDate.getDate());
-    // Output the day, date, month and year   
+    // Output the (day,) date, month and year   
     $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
-    
+    // Output the day
+
+
     setInterval( function() {
         // Create a newDate() object and extract the seconds of the current time on the visitor's
         var seconds = new Date().getSeconds();
