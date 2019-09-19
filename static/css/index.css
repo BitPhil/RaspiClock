@@ -100,36 +100,42 @@ a {
 .clock {
     width: 180px;
     margin: 0 auto;
-    padding: 1px;
-    border: 1px solid #333;
+    padding: 0spx;
     color: black;
 }
 
 #Date {
     font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    text-align: center;
-    text-shadow: 0 0 2px #00c6ff;
+    font-size: 16px;
+    text-align: left;
+    color: #8f8f8f;
+}
+
+#Day {
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    color: #8f8f8f;
 }
 
 ul {
     width: 180px;
-    margin: 0 auto;
+    margin: 5px auto;
     padding: 0px;
     list-style: none;
-    text-align: center;
+    text-align: left;
 }
 
 ul li {
+    color: white;
     display: inline;
-    font-size: 14px;
+    font-size: 32px;
     text-align: center;
     font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
-    text-shadow: 0 0 2px #00c6ff;
 }
 
 #point {
     position: relative;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
