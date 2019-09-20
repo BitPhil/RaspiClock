@@ -1,15 +1,16 @@
 from app import app
 
-from flask import render_template, redirect, url_for, request, flash
-import requests, json, time
+from flask import render_template, redirect, request, flash
+import requests, json
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    print(app.config)
+    return render_template('home.html')
 
-@app.route('/index.html')
+@app.route('/home.html')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/alarms.html')
 def alarms():
@@ -19,25 +20,24 @@ def alarms():
 def settings():
     return render_template('settings.html')
 
-@app.route('/_light', methods=['POST'])
+@app.route('/_lightON', methods=["POST"])
 def lightOn():
-    status_on = request.form['status_on']
-    flash("status_on:", status_on)
-    
     # Setting up URL to send commands to the bulb via the hue bridge
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
-
-    # Setting up the command/data based on content of status_on (true or false)
-    if(status_on == True):
-        data = {"on":True, "bri":200} #bri = 254 is full brightness
-        response = {'turned on'}
-    else:
-        data = {"on":False}
-        response = {'turned off'}
-
+    data = {"on":True, "bri":200} #bri = 254 is full brightness
+    response = "turned on"
     flash(response)
-    
     # Send the command to the bulb via hue bridge
     r = requests.put(url, json.dumps(data), timeout=5)
+    return response
 
-    return response    
+@app.route('/_lightOFF', methods=["POST"])
+def lightOff():
+    # Setting up URL to send commands to the bulb via the hue bridge
+    url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
+    data = {"on":False}
+    response = "turned off"
+    flash(response)
+    # Send the command to the bulb via hue bridge
+    r = requests.put(url, json.dumps(data), timeout=5)
+    return response

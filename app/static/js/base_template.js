@@ -13,8 +13,6 @@ $(document).ready(function(){
     // Output the date, month and year   
     $('#Date').html(newDate.getDate() + '. ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
     
-
-
     setInterval( function() {
         // Create a newDate() object and extract the seconds of the current time on the visitor's
         var seconds = new Date().getSeconds();
@@ -54,27 +52,48 @@ function setWidgetData_1659676024(data){
 //#region light
 // when light-button is clicked, the connected light should be turned on/off
 // actual status is shown bei button color
-
 $(document).ready(function(){  
 
     $("#light_on").click(function(){
-        alert("Clicked");
+        alert("Clicked ON");
         // prüfen, ob Licht an oder aus ist (Hue-Abfrage, Datenbank, CSV, ...)
         
         // data im folgenden ajax dementsprechend True (wenn Licht aus ist) oder False (wenn Licht an ist) setzen
         $.ajax({
-            url: '/_light',
+            url: '/_lightON',
             data: {'status_on':'True'},
             type: 'POST',
             success: function(response) {
                 console.log(response);
                 alert("success");
-                $("#btn_color").style.color = 'orange';
+                //$("#btn_color").style.color = 'orange';
             },
             error: function(error) {
                 console.log(error);
                 alert("error");
-                $("#btn_color").style.color = 'black';
+                //$("#btn_color").style.color = 'black';
+            }
+        });
+    });
+
+    $("#light_off").click(function(){
+        alert("Clicked OFF");
+        // prüfen, ob Licht an oder aus ist (Hue-Abfrage, Datenbank, CSV, ...)
+        
+        // data im folgenden ajax dementsprechend True (wenn Licht aus ist) oder False (wenn Licht an ist) setzen
+        $.ajax({
+            url: '/_lightOFF',
+            data: {'status_on':'False'},
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+                alert("success");
+                //$("#btn_color").style.color = 'orange';
+            },
+            error: function(error) {
+                console.log(error);
+                alert("error");
+                //$("#btn_color").style.color = 'black';
             }
         });
     });
