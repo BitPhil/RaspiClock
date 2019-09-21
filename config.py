@@ -21,6 +21,8 @@ class Develop(Config):
     DEBUG = True
     SESSION_COOKIE_SECURE = False
 
+    SQLALCHEMY_DATABASE_URI = "sqlite:///site.db" 
+
 class Testing(Config):
     TESTING = True
     SESSION_COOKIE_SECURE = False
