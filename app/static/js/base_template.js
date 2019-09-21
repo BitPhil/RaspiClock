@@ -53,9 +53,9 @@ function setWidgetData_1659676024(data){
 // when light-button is clicked, the connected light should be turned on/off
 // actual status is shown bei button color
 $(document).ready(function(){  
-
+    
     $("#light_on").click(function(){
-        alert("Clicked ON");
+        //alert("Clicked ON");
         // prüfen, ob Licht an oder aus ist (Hue-Abfrage, Datenbank, CSV, ...)
         
         // data im folgenden ajax dementsprechend True (wenn Licht aus ist) oder False (wenn Licht an ist) setzen
@@ -64,8 +64,8 @@ $(document).ready(function(){
             data: {'status_on':'True'},
             type: 'POST',
             success: function(response) {
-                console.log(response);
-                alert("success");
+                //console.log(response);
+                //alert("success");
                 //$("#btn_color").style.color = 'orange';
             },
             error: function(error) {
@@ -77,7 +77,7 @@ $(document).ready(function(){
     });
 
     $("#light_off").click(function(){
-        alert("Clicked OFF");
+        //alert("Clicked OFF");
         // prüfen, ob Licht an oder aus ist (Hue-Abfrage, Datenbank, CSV, ...)
         
         // data im folgenden ajax dementsprechend True (wenn Licht aus ist) oder False (wenn Licht an ist) setzen
@@ -86,8 +86,8 @@ $(document).ready(function(){
             data: {'status_on':'False'},
             type: 'POST',
             success: function(response) {
-                console.log(response);
-                alert("success");
+                //console.log(response);
+                //alert("success");
                 //$("#btn_color").style.color = 'orange';
             },
             error: function(error) {

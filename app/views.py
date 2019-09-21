@@ -1,4 +1,5 @@
 from app import app
+from app.models import light_states
 
 from flask import render_template, redirect, request, flash
 import requests, json
@@ -26,7 +27,6 @@ def lightOn():
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
     data = {"on":True, "bri":200} #bri = 254 is full brightness
     response = "turned on"
-    flash(response)
     # Send the command to the bulb via hue bridge
     r = requests.put(url, json.dumps(data), timeout=5)
     return response
@@ -37,7 +37,6 @@ def lightOff():
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
     data = {"on":False}
     response = "turned off"
-    flash(response)
     # Send the command to the bulb via hue bridge
     r = requests.put(url, json.dumps(data), timeout=5)
     return response
