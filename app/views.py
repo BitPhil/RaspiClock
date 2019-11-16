@@ -45,14 +45,24 @@ def light():
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
     
     # Find out whether to turn the light on or off - curent state is tracked in DB!
-    state_on = json.load("status.json")['light']
+    with open("app/status.json") as f:
+        json_data = json.load(f)
+    state_light = json_data["light"]
+
     #state_on = light_states.query(light_states.state_on).filter_by(name="4").first()
-    if state_on == 'on':
+    if state_light == 'on':
         data = {"on":False}
         response = "turned off"
+        json_data["light"] = "off"
+
     else:
         data = {"on":True, "bri":200}
         response = "turned on"
+        json_data["light"] = "on"
+    
+    f.seek(0)        # <--- should reset file position to the beginning.
+    json.dump(data, f, indent=4)
+    f.truncate()
 
     # Send the command to the bulb via hue bridge
     r = requests.put(url, json.dumps(data), timeout=5)
