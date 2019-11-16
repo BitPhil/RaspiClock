@@ -46,7 +46,7 @@ def light():
     
     # Find out whether to turn the light on or off - curent state is tracked in DB!
     state_on = light_states.query(light_states.state_on).filter_by(name="4").first()
-    if state_on = False:
+    if state_on == False:
         data = {"on":False}
         response = "turned off"
     else:
