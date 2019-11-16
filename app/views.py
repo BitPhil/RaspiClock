@@ -25,7 +25,7 @@ def lightOn():
     # Setting up URL to send commands to the bulb via the hue bridge
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
     data = {"on":True, "bri":200} #bri = 254 is full brightness
-    response = "turned on"
+    response = "turned on"    
     # Send the command to the bulb via hue bridge
     r = requests.put(url, json.dumps(data), timeout=5)
     return response
@@ -45,8 +45,9 @@ def light():
     url = "http://192.168.178.28/api/QpwEJGEz2Vw6J6z66yj2vRhC4yruI6sMr8jOnyZe/lights/4/state"
     
     # Find out whether to turn the light on or off - curent state is tracked in DB!
-    state_on = light_states.query(light_states.state_on).filter_by(name="4").first()
-    if state_on == False:
+    state_on = json.load("status.json")['light']
+    #state_on = light_states.query(light_states.state_on).filter_by(name="4").first()
+    if state_on == 'on':
         data = {"on":False}
         response = "turned off"
     else:
