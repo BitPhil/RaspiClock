@@ -24,10 +24,10 @@ a {
     grid-template-areas: 
         ". . . . . . ."
         ". header header header . . ."
-        ". title_1 time_1 x_1 l_1 timeuntil_1 ."
-        ". title_2 time_2 x_2 l_2 timeuntil_2 ."
-        ". title_3 time_3 x_3 l_3 timeuntil_3 ."
-        ". title_4 time_4 x_4 l_4 timeuntil_4 ."
+        ". title_1 time_1 x_1 x_1 typetxt_1 ."
+        ". title_2 time_2 x_2 x_2 typetxt_2 ."
+        ". title_3 time_3 x_3 x_3 typetxt_3 ."
+        ". title_4 time_4 x_4 x_4 typetxt_4 ."
         ". homebtn . light_offbtn light_onbtn settingsbtn ."
         ". . . . . . ."
 }
@@ -150,54 +150,20 @@ input:checked + .slider:before {
     font-size: 14px;
 }
 
-.timeuntil_1{
-    grid-area: timeuntil_1;
+.type_1{
+    grid-area: typetxt_1;
     font-size: 14px;
 }
-.timeuntil_2{
-    grid-area: timeuntil_2;
+.type_2{
+    grid-area: typetxt_2;
     font-size: 14px;
 }
-.timeuntil_3{
-    grid-area: timeuntil_3;
+.type_3{
+    grid-area: typetxt_3;
     font-size: 14px;
 }
-.timeuntil_4{
-    grid-area: timeuntil_4;
-    font-size: 14px;
-}
-
-.x_1{
-    grid-area: x_1;
-    font-size: 14px;
-}
-.x_2{
-    grid-area: x_2;
-    font-size: 16px;
-}
-.x_3{
-    grid-area: x_3;
-    font-size: 14px;
-}
-.x_4{
-    grid-area: x_4;
-    font-size: 14px;
-}
-
-.l_1{
-    grid-area: l_1;
-    font-size: 14px;
-}
-.l_2{
-    grid-area: l_2;
-    font-size: 16px;
-}
-.l_3{
-    grid-area: l_3;
-    font-size: 14px;
-}
-.l_4{
-    grid-area: l_4;
+.type_4{
+    grid-area: typetxt_4;
     font-size: 14px;
 }
 
